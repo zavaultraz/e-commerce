@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class Dashboard extends Controller
 {
     public function index(){
+
         return view('pages.admin.index');
     }
 }
