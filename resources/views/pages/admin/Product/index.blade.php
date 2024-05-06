@@ -9,8 +9,8 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="#">Library</a></li>
-                <li class="breadcrumb-item active">Default</li>
+                <li class="breadcrumb-item"><a href="#">Product</a></li>
+                <li class="breadcrumb-item active">Data Product</li>
             </ol>
         </nav>
 
@@ -52,7 +52,7 @@
                                                         <i class="bi bi-trash text-white"></i>
                                                     </button>
                                                 </form>
-                                                <a href="#" class="btn btn-primary">
+                                                <a href="{{route('admin.product.gallery.index', $row->id)}}" class="btn btn-primary">
                                                     <i class="bi bi-images"></i>
                                                 </a>
                                                 <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModalProduct{{ $row->id }}">
