@@ -13,7 +13,11 @@
                 <li class="breadcrumb-item active">Product Gallery</li>
             </ol>
         </nav>
-        <a href="" class="btn btn-primary"><i class="bi bi-plus"> Add Images</i></a>
+
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+           <i class="bi bi-plus"></i> Add Images
+        </button>
+        @include('pages.admin.Product.gallery.modal-create')
         <table class="table">
             <thead>
                 <tr>
@@ -30,6 +34,6 @@
                 </tr>
             </tbody>
         </table>
-</div>
+    </div>
 </div>
 @endsection
