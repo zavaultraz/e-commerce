@@ -9,7 +9,7 @@
                 </a>
             </li><!-- End Dashboard Nav -->
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('admin.category.*') ? '' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse"
+                <a class="nav-link {{ request()->routeIs('admin.category.*','admin.product.gallery.index','admin.product.index') ? '' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse"
                     href="#">
                     <i class="bi bi-menu-button-wide"></i><span>Product</span><i
                         class="bi bi-chevron-down ms-auto"></i>
@@ -21,7 +21,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('admin.product.index')}}" class="{{ request()->routeIs('admin.product.index') ? 'active' : ''}}">
+                        <a href="{{route('admin.product.index')}}" class="{{ request()->routeIs('admin.product.index', 'admin.product.gallery.index') ? 'active' : ''}}">
                             <i class="bi bi-circle"></i><span>Data Product</span>
                         </a>
                     </li>
