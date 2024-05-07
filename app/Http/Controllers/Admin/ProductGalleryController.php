@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 
 class ProductGalleryController extends Controller
 {
@@ -29,11 +30,17 @@ class ProductGalleryController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Product $product)
     {
-        $this->validate($request,[
-            'image'=>;
-        ]);
+      
+        try {
+           
+            $files = $request->file('files');
+
+        } catch (Exception $e) {
+            dd($e->getMessage());
+            return redirect()->route('admin.product.gallery.index',$id)->with('error', 'GAGAL MENAMBAHKAN 😭');
+        }
     }
 
     /**
