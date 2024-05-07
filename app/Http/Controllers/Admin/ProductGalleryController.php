@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Exception;
+use Illuminate\Support\Facades\Storage;
 
 class ProductGalleryController extends Controller
 {
@@ -32,25 +33,31 @@ class ProductGalleryController extends Controller
      */
     public function store(Request $request, Product $product)
     {
-      
+
         try {
-            
+
             $files = $request->file('files');
 
+            // foreach file, store each file to storage
+            // digunakan untuk menyimpan file ke storage
             foreach ($files as $file) {
-                // upload image
-                $file->storeAs('public/product/gallery',$file->hasName());
-                // insert data ke database
-              $product->product_galleries()->create([
-                'products_id'=> $product->id,
-                'image'=>$file->hashName()
-              ]);
-        
+                //upload gambar(image)
+                $file->storeAs('public/product/gallery', $file->hashName());
+
+                //insert data ke database
+                $product->product_galleries()->create([
+                    'products_id' => $product->id,
+                    'image' => $file->hashName()
+                ]);
+
+                // dd($product);
             }
-            return redirect()->route('admin.product.gallery.index',$product->id)->with('succsess', 'GAGAL MENAMBAHKAN 😭');
+
+
+            return redirect()->route('admin.product.gallery.index', $product->id)->with('success', 'Image uploaded successfully');
         } catch (Exception $e) {
             dd($e->getMessage());
-            return redirect()->route('admin.product.gallery.index',$product->id)->with('error', 'GAGAL MENAMBAHKAN 😭');
+            return redirect()->route('admin.product.gallery.index', $product->id)->with('error', 'Failed to upload image');
         }
     }
 
@@ -87,7 +94,7 @@ class ProductGalleryController extends Controller
 
             // get gallery by id
             $gallery = $product->product_galleries()->findOrFail($id);
-
+            Storage::delete('public/product/gallery/'.basename($gallery->image));
             //delete image from storage
             $gallery->delete();
 
