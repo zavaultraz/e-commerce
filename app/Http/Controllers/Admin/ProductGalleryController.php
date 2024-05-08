@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\ProductGallery;
 use Exception;
 use Illuminate\Support\Facades\Storage;
 
@@ -88,12 +89,12 @@ class ProductGalleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id, Product $product)
+    public function destroy(Product $product,ProductGallery $gallery )
     {
         try {
-
+            $product = $product->findOrFail($product->id);
             // get gallery by id
-            $gallery = $product->product_galleries()->findOrFail($id);
+            $gallery = $gallery->findOrFail($gallery->id);
             Storage::delete('public/product/gallery/'.basename($gallery->image));
             //delete image from storage
             $gallery->delete();

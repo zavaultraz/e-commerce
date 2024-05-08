@@ -17,6 +17,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+        
         $product = Product::select('id', 'name', 'price', 'category_id', 'description')->latest()->get();  // mengambil semua isi tabel news dan diurutkan secara latest (terbaru)
         $category = Category::all();   // menampilkan semua data yang ada didalam table category
         return view('pages.admin.Product.index', compact('product', 'category'));

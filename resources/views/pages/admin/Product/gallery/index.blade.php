@@ -29,9 +29,16 @@
             <tbody>
                 @forelse ($product->product_galleries as $row )
                 <tr>
-                    <td>{{$loop->iteration}}</td>
-                    <td><img src="{{$row->image}}" alt="{{$row->name}}"></td>
-                    <td><button class="btn btn-danger">✖️</button></td>
+                    <td>{{ $loop->iteration }}</td>
+                    <td><img src="{{url ('storage/product/gallery/',$row->image) }}"  class="img-fluid" width="100px"     alt="{{ $row->name }}"></td>
+
+                    <td>
+                        <form action="{{ route('admin.product.gallery.destroy', [$product->id,$row->id]) }}" method="post" class="d-inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 @empty
                 <tr>
@@ -43,6 +50,7 @@
 
             </tbody>
         </table>
+        <a href="{{route('admin.product.index')}}" class="btn btn-secondary">back</a>
     </div>
 </div>
 @endsection

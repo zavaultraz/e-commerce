@@ -1,3 +1,7 @@
+@extends('layouts.parent')
+@section('title', 'User')
+
+@section('content')
 <div class="card">
     <div class="card-body">
         <h5 class="card-title">Category</h5>
@@ -10,3 +14,4 @@
         </nav>
     </div>
 </div>
+@endsection
