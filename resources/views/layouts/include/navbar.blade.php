@@ -2,8 +2,8 @@
 
     <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
-            <img src="{{asset('dashboard/assets/img/logo.png')}}" alt="">
-            <span class="d-none d-lg-block">NiceAdmin</span>
+            <img src="{{asset('dashboard/assets/img/LOGO ZV.png')}}" alt="">
+            <span class="d-none d-lg-block">Adminzzz</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -168,14 +168,18 @@
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="{{asset ('dashboard/assets/img/profile-img.jpg')}}" alt="Profile" class="rounded-circle">
+                @if (empty(Auth::user()->profile->image))
+                        <img src="https://ui-avatars.com/api/background=random&color=fff?name={{ Auth::user()->name }}" alt="" class="img-fluid w-100 rounded-circle">
+                        @else
+                        <img src="{{ Auth::user()->profile->image }}" alt="pp" class="img-fluid w-100 rounded-circle">
+                        @endif  
                     <span class="d-none d-md-block dropdown-toggle ps-2">{{Auth::user()->name}}</span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
-                        <h6>Kevin Anderson</h6>
-                        <span>Web Designer</span>
+                        <h6>{{Auth::user()->name}}</h6>
+                        <span>{{Auth::user()->role}}</span>
                     </li>
                     <li>
                         <hr class="dropdown-divider">

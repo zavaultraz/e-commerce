@@ -3,19 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\transaction;
 use Illuminate\Http\Request;
 
-
-class MyTransaction extends Controller
+class transactionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $mytransaction = transaction::with(['user'])->where('user_id',auth()->user()->id)->get();
-        return view('pages.admin.my-transaction.index',compact('mytransaction'));
+        //
     }
 
     /**
