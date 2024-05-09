@@ -50,7 +50,9 @@
 
             </tbody>
         </table>
-        <a href="{{route('admin.product.index')}}" class="btn btn-secondary">back</a>
+        <div class="d-flex justify-content-end">
+        <a href="{{route('admin.product.index')}}" class="btn btn-outline-warning"><i class="bi bi-back"></i> Back</a>
+        </div>
     </div>
 </div>
 @endsection

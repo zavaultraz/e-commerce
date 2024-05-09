@@ -192,9 +192,9 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                            <i class="bi bi-gear"></i>
-                            <span>Account Settings</span>
+                        <a class="dropdown-item d-flex align-items-center" href="{{route('profile.change-password')}}">
+                            <i class="ri-admin-line"></i>
+                            <span>Change Password</span>
                         </a>
                     </li>
                     <li>
