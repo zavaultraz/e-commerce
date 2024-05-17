@@ -11,8 +11,15 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[\App\Http\Controllers\Frontend\FrontendController::class, 'index']);
-Route::get('/detail/{slug}',[\App\Http\Controllers\Frontend\FrontendController::class, 'detailProduct'])->name('detail.product');
+Route::get('/detail-product/{slug}',[\App\Http\Controllers\Frontend\FrontendController::class, 'detailProduct'])->name('detail.product');
+Route::get('/detail-category/{slug}',[\App\Http\Controllers\Frontend\FrontendController::class, 'detailCategory'])->name('detail.category');
+
 Auth::routes();
+
+Route::middleware('auth')->group(function(){
+    Route::get('/cart',[\App\Http\Controllers\Frontend\FrontendController::class, 'cart'])->name('cart');
+    Route::post('/addTocart/{id}',[\App\Http\Controllers\Frontend\FrontendController::class, 'addToCart'])->name('addtocart');
+});
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::name('admin.')->prefix('admin')->middleware('admin')->group(function () {

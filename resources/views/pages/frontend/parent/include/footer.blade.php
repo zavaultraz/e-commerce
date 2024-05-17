@@ -2,7 +2,7 @@
  <section class="">
         <div class="border-b border-gray-200 py-12 mt-16 px-4">
             <div class="flex justify-center mb-8">
-                <img src="{{ asset('frontend/images/content/favicon.png') }}" />
+                <img src="{{ asset('frontend/images/content/logo.png') }}" />
             </div>
             <aside class="container mx-auto">
                 <div class="flex flex-wrap -mx-4 justify-center">

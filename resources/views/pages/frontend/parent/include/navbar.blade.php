@@ -7,9 +7,6 @@
             <div class="w-full"></div>
             <div class="w-auto">
                 <ul class="fixed bg-white inset-0 z-0 flex flex-col invisible items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center" id="menu">
-                    <li class="mx-3 py-6 md:py-0">
-                        <a href="#" class="text-black md:text-black hover:underline">Showcase</a>
-                    </li>
                     @foreach ($category as $item)
                     <li class="mx-3 py-6 md:py-0">
                         <a href="#" class="text-black md:text-black hover:underline">{{ $item->name }}</a>
