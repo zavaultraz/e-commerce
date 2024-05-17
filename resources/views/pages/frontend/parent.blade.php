@@ -28,7 +28,7 @@
     <!-- Add your site or application content here -->
 
     <!-- START: HEADER -->
-    @include('pages.frontend.parent')
+    @include('pages.frontend.include.navbar')
 
     <!-- END: HEADER -->
 
