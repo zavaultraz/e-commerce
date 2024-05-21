@@ -19,6 +19,8 @@ Auth::routes();
 Route::middleware('auth')->group(function(){
     Route::get('/cart',[\App\Http\Controllers\Frontend\FrontendController::class, 'cart'])->name('cart');
     Route::post('/addTocart/{id}',[\App\Http\Controllers\Frontend\FrontendController::class, 'addToCart'])->name('addtocart');
+    Route::delete('/cart/{id}',[\App\Http\Controllers\Frontend\FrontendController::class, 'deleteCart'])->name('deletecart');
+    Route::post('/checkout',[\App\Http\Controllers\Frontend\FrontendController::class, 'checkout'])->name('checkout');
 });
 
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
