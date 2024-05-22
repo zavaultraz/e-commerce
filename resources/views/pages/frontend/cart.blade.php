@@ -119,7 +119,7 @@
 
                         <div class="flex flex-col mb-4">
                             <label for="address" class="text-sm mb-2">Address</label>
-                            <input data-input type="text" id="address" name="address" class="border-gray-200 border rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none" placeholder="Input your address" />
+                            <input data-input type="text" id="address" name="addres" class="border-gray-200 border rounded-lg px-4 py-2 bg-white text-sm focus:border-blue-200 focus:outline-none" placeholder="Input your address" />
                         </div>
 
                         <div class="flex flex-col mb-4">

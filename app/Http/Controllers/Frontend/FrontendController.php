@@ -84,6 +84,7 @@ class FrontendController extends Controller
                 'name' => $data['name'],
                 'email' => $data['email'],
                 'phone' => $data['phone'],
+                'addres' => $data['addres'],
                 'total_price' => $cart->sum('product.price')
             ]);
             //create transaction item
