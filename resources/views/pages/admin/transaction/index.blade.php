@@ -17,46 +17,58 @@
         <h3 class="card-title">
             <i class="bi bi-cart"></i> List Transaction
         </h3>
-        <table class="table table-hover">
+        <table class="table datatable table-striped table-hover">
             <thead>
                 <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Account</th>
-                    <th scope="col">Reciever Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
+                    <th>No</th>
+                    <th>Account</th>
+                    <th>Reciever Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Payement Url</th>
+                    <th>Total Price</th>
+                    <td>Action</td>
                 </tr>
             </thead>
             <tbody>
+
                 @forelse ($transaction as $row)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ auth()->user()->name }}</td>
+                    <td>{{ $row->user->name }}</td>
                     <td>{{ $row->name }}</td>
                     <td>{{ $row->email }}</td>
                     <td>{{ $row->phone }}</td>
                     <td>
                         @if ($row->status == 'EXPIRED')
-                        <span class="badge bg-danger">Expired</span>
+                        <span class="badge bg-danger text-uppercast">Expired</span>
                         @elseif ($row->status == 'PENDING')
-                        <span class="badge bg-warning">Pending</span>
-                        @elseif ($row->status == 'SETTLEMENT')
-                        <span class="badge bg-info">Settelment</span>
+                        <span class="badge bg-warning text-uppercast">Pending</span>
+                        @elseif ($row->status == 'SATTLEMENT')
+                        <span class="badge bg-info text-uppercast">Settlement</span>
                         @else
-                        <span class="badge bg-succsess">Success</span>
+                        <span class="badge bg-success text-uppercast">Success</span>
                         @endif
                     </td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewModal{{$row->id}}">
-                            View
-                        </button></td>
-                    @include('pages.admin.my-transaction.modal.view-modal')
-
+                    <td>
+                        @if ($row->payment_url == '')
+                        Empty
+                        @else
+                        <a href="{{$row->payment_url}}">Click Here</a>
+                        @endif
+                        </td>
+                            <td>Rp. {{number_format($row->total_price)}}</td>
+                            <td>
+                                <button type=" button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewModal{{ $row->id }}">
+                            <i class="bi bi-eye"></i>
+                            </button>
+                            @include('pages.admin.my-transaction.modal.view-modal')
+                    </td>
                 </tr>
                 @empty
-
                 @endforelse
+
 
             </tbody>
         </table>

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\transaction;
 use Illuminate\Http\Request;
+use App\Models\transactionItem;
+use App\Http\Controllers\Controller;
 
 
 class MyTransaction extends Controller
@@ -37,9 +38,11 @@ class MyTransaction extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($name)
     {
-        //
+        $transactionItem = transactionItem::with(['product'])->where('transaction_id', $name)->get();
+        
+        return view ('pages.admin.my-transaction.show',compact('transactionItem'));
     }
 
     /**

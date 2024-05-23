@@ -12,6 +12,7 @@ class transaction extends Model
         'user_id',
         'name',
         'email',
+        'slug',
         'phone',
         'addres',
         'courier',

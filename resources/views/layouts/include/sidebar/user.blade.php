@@ -9,19 +9,23 @@
             </a>
         </li><!-- End Dashboard Nav -->
 
+       <!-- End Components Nav -->
+
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-menu-button-wide"></i><span>My transaction</span><i class="bi bi-chevron-down ms-auto"></i>
+            <a class="nav-link {{ request()->routeIs('user.my-transaction.index') ? '' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                <i class="ri-money-dollar-box-line"></i><span>Transaction</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul id="components-nav" class="nav-content {{ request()->routeIs('user.my-transaction.index*') ? 'show' : ''}}" data-bs-parent="#sidebar-nav">
+               
                 <li>
-                    <a href="components-alerts.html">
-                        <i class="bi bi-circle"></i><span>Transaction</span>
+                    <a href="{{route('user.my-transaction.index')}}" class="{{ request()->routeIs('user.my-transaction.index','user.my-transaction.show') ? 'active' : ''}}">
+                        <i class="bi bi-circle"></i><span>My Transaction</span>
                     </a>
                 </li>
-
-                <!-- End Blank Page Nav -->
-
             </ul>
+        </li>
+
+    </ul>
+
 
 </aside>
