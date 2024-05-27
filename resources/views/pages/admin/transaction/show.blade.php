@@ -28,12 +28,12 @@
             <!-- Table with stripped rows -->
             <table class="table table-striped">
                 <thead>
-                    <tr>
+                    <!-- <tr>
                         <th scope="col">Name Account</th>
                         <td scope="col">
                             {{ auth()->user()->name }}
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <th scope="col">Reciever Name</th>
                         <td scope="col">
@@ -74,7 +74,7 @@
                                 <span class="badge bg-danger text-uppercase">Expired</span>
                             @elseif ($transaction->status == 'PENDING')
                                 <span class="badge bg-warning text-uppercase">Pending</span>
-                            @elseif ($transaction->status == 'SETTLEMENT')
+                            @elseif ($transaction->status == 'SATTLEMENT')
                                 <span class="badge bg-info text-uppercase">Settlement</span>
                             @else
                                 <span class="badge bg-success text-uppercase">Success</span>

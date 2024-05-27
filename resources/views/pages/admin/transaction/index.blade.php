@@ -5,7 +5,7 @@
 <div class="card">
     <div class="card-body">
         <div>
-            <h1 class="fs-1 mt-3 card-title">My Transaction</h1>
+            <h1 class="fs-1 mt-3 card-title">Transaction</h1>
             <nav class="">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
@@ -22,7 +22,7 @@
                 <tr>
                     <th>No</th>
                     <th>Account</th>
-                    <th>Reciever Name</th>
+                    <th>Reciever</th>
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Status</th>
@@ -46,7 +46,7 @@
                         @elseif ($row->status == 'PENDING')
                         <span class="badge bg-warning text-uppercast">Pending</span>
                         @elseif ($row->status == 'SATTLEMENT')
-                        <span class="badge bg-info text-uppercast">Settlement</span>
+                        <span class="badge bg-info text-uppercast">Sattlement</span>
                         @else
                         <span class="badge bg-success text-uppercast">Success</span>
                         @endif
@@ -57,13 +57,14 @@
                         @else
                         <a href="{{$row->payment_url}}">Click Here</a>
                         @endif
-                        </td>
-                            <td>Rp. {{number_format($row->total_price)}}</td>
-                            <td>
-                                <button type=" button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewModal{{ $row->id }}">
-                            <i class="bi bi-eye"></i>
-                            </button>
-                            @include('pages.admin.my-transaction.modal.view-modal')
+                    </td>
+                    <td>Rp. {{number_format($row->total_price)}}</td>
+                    <td>
+                        <button type=" button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#updatestaus{{$row->id}}">
+                            view
+                        </button>
+                        @include('pages.admin.transaction.modal-edit')
+                        <button type="button"  class="btn btn-sm mt-1 btn-warning">Detail</button>
                     </td>
                 </tr>
                 @empty

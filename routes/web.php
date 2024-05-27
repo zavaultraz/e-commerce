@@ -32,11 +32,13 @@ Route::name('admin.')->prefix('admin')->middleware('admin')->group(function () {
     Route::resource('/product.gallery',ProductGalleryController::class)->except('create','show','edit','update');
     Route::resource('/mytransaction',MyTransaction::class)->only('index','show');
     Route::resource('/transaction',transactionController::class);
+    Route::get('/my-transaction/{id}/{slug}', [MyTransaction::class, 'showDataBySlugAndId'])->name('my-transaction.showDataBySlugAndId');
 });
 
 Route::name('user.')->prefix('user')->middleware('user')->group(function () {
     Route::get('/dashboard', [\App\Http\Controllers\user\Dashboardcontroller::class, 'index'])->name('dashboard');
     Route::resource('/my-transaction',MyTransaction::class)->only('index', 'show');
+    Route::get('/my-transaction/{id}/{slug}', [MyTransaction::class, 'showDataBySlugAndId'])->name('my-transaction.showDataBySlugAndId');
     
 });
 

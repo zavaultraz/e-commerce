@@ -16,7 +16,10 @@ class MyTransaction extends Controller
     public function index()
     {
         $mytransaction = transaction::with(['user'])->where('user_id',auth()->user()->id)->get();
-        return view('pages.admin.my-transaction.index',compact('mytransaction'));
+        $pending = transaction::where('user_id',auth()->user()->id)->where('status','PENDING')->count();
+        $expired = transaction::where('user_id',auth()->user()->id)->where('status','EXPIRED')->count();
+        $settlement = transaction::where('user_id',auth()->user()->id)->where('status','SETTLEMENT')->count();
+        return view('pages.admin.my-transaction.index',compact('mytransaction','pending','expired','settlement'));
     }
 
     /**
@@ -68,4 +71,12 @@ class MyTransaction extends Controller
     {
         //
     }
+    public function showDataBySlugAndId($id, $slug)
+    {
+        $transaction = transaction::where('slug', $slug)->where('id', $id)->firstOrFail();
+
+        return view('pages.admin.my-transaction.show', compact('transaction'));
+    }
+
+
 }

@@ -23,6 +23,71 @@
         <h3 class="card-title">
             <i class="bi bi-cart"></i> List Transaction
         </h3>
+        <div class="section dashboard">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card info-card customers-card sales-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Pending</h5>
+
+                            <div class="d-flex align-items-center ">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-alarm"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>{{$pending}} Product</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card info-card  sales-card">
+
+
+
+                        <div class="card-body">
+                            <h5 class="card-title">Expired</h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle  d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-exclamation-octagon-fill"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>{{ $expired }} Orders</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="card info-card  revenue-card">
+
+
+
+                        <div class="card-body">
+                            <h5 class="card-title">Settlement</h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bx bxs-check-shield"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>{{ $settlement }} Orders</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -50,24 +115,18 @@
                         <span class="badge bg-danger text-uppercase">Expired</span>
                         @elseif ($row->status == 'PENDING')
                         <span class="badge bg-warning text-uppercase">Pending</span>
-                        @elseif ($row->status == 'SETTLEMENT')
+                        @elseif ($row->status == 'SATTLEMENT')
                         <span class="badge bg-info text-uppercase">Settelment</span>
                         @else
                         <span class="badge bg-succsess text-uppercase">Success</span>
                         @endif
                     </td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#viewModal{{$row->id}}">
-                            View
-                        </button></td>
-                    @include('pages.admin.my-transaction.modal.view-modal')
-                    <td>
                     <td>
                         @if (Auth::user()->role == 'admin')
-                        <a href="{{ route('admin.mytransaction.show', $row->name) }}" class="btn btn-info"><i class="bi bi-eye">detail</i></a>
+                        <a href="{{ route('admin.my-transaction.showDataBySlugAndId', [$row->id, $row->slug]) }}" class="btn btn-info"><i class="bi bi-eye">detail</i></a>
                         @else
-                        <a href="{{ route('user.mytransaction.show', $row->name) }}" class="btn btn-info"><i class="bi bi-eye">detail</i></a>
+                        <a href="{{ route('user.my-transaction.showDataBySlugAndId', [$row->id, $row->slug]) }}" class="btn btn-info"><i class="bi bi-eye">detail</i></a>
                         @endif
-                    </td>
                     </td>
                 </tr>
                 @empty
