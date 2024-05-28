@@ -64,7 +64,7 @@
                             view
                         </button>
                         @include('pages.admin.transaction.modal-edit')
-                        <button type="button"  class="btn btn-sm mt-1 btn-warning">Detail</button>
+                        <a href="{{route('admin.transaction.showTransactionUserByAdminWithSlugAndId', [$row->id, $row->slug])}}"  class="btn btn-sm mt-1 btn-warning">Detail</a>
                     </td>
                 </tr>
                 @empty

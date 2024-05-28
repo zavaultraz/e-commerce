@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\Admin\MyTransaction;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\ProductGalleryController;
-use App\Http\Controllers\Admin\transactionController;
-use App\Http\Controllers\AdminCategory;
 use App\Models\Product;
 use App\Models\ProductGallery;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminCategory;
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\Admin\MyTransaction;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\transactionController;
+use App\Http\Controllers\Admin\ProductGalleryController;
 
 Route::get('/',[\App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 Route::get('/detail-product/{slug}',[\App\Http\Controllers\Frontend\FrontendController::class, 'detailProduct'])->name('detail.product');
@@ -32,6 +33,7 @@ Route::name('admin.')->prefix('admin')->middleware('admin')->group(function () {
     Route::resource('/product.gallery',ProductGalleryController::class)->except('create','show','edit','update');
     Route::resource('/mytransaction',MyTransaction::class)->only('index','show');
     Route::resource('/transaction',transactionController::class);
+    Route::get('/transaction/{id}/{slug}',[transactionController::class, 'showTransactionUserByAdminWithSlugAndId'])->name('transaction.showTransactionUserByAdminWithSlugAndId');
     Route::get('/my-transaction/{id}/{slug}', [MyTransaction::class, 'showDataBySlugAndId'])->name('my-transaction.showDataBySlugAndId');
 });
 
@@ -47,4 +49,32 @@ Route::middleware('auth')->group(function () {
     Route::put('/update-password',[\App\Http\Controllers\Profile\ProfileController::class, 'updatePassword'])->name('profile.update-password');
 });
 
+//route artisan call
+Route::get('/storage-link', function() {
+    Artisan::call('storage:link');
+    return 'success';
+    return 'storage link succses';
+});
+Route::get('/config-cache', function() {
+    Artisan::call('config:cache');
+    return 'config cache succses';
+});
+Route::get('/config-clear', function() {
+    Artisan::call('config:clear');
+    return 'config clear succses';
+});
+Route::get('/view-cache', function() {
+    Artisan::call('view:cache');
+    return 'view cache succses';
+});
+Route::get('/view-clear', function() {
+    Artisan::call('view:clear');
+    return 'view clear succses';
+});
+Route::get('/route-clear', function() {
+    Artisan::call('route:clear');
+    return 'route clear succses';
+});
+
+ 
 

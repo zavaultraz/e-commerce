@@ -14,8 +14,8 @@ class transactionController extends Controller
      */
     public function index()
     {
-        $transaction = transaction::with('user')->select('id','name','user_id','email','total_price','addres','courier','phone','payment','payment_url','status','slug')->latest()->get();
-        return view('pages.admin.transaction.index',compact('transaction'));
+        $transaction = transaction::with('user')->select('id', 'name', 'user_id', 'email', 'total_price', 'addres', 'courier', 'phone', 'payment', 'payment_url', 'status', 'slug')->latest()->get();
+        return view('pages.admin.transaction.index', compact('transaction'));
     }
 
     /**
@@ -47,15 +47,13 @@ class transactionController extends Controller
      */
     public function edit(string $id)
     {
-
-
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {        
+    {
         //get data transaction by id
         //
         $transaction = transaction::findOrFail($id);
@@ -65,9 +63,9 @@ class transactionController extends Controller
                 'status' => $request->status
             ]);
             return redirect()->route('admin.transaction.index')->with('succsess', 'sukses abangku 🛫');
-        }  catch (Exception $e) {
+        } catch (Exception $e) {
             dd($e->getMessage());
-            return redirect()->route('admin.transaction.index')->with('error', 'Terjadi Kesalahan ❌');
+            return redirect()->route('admin.transaction.index')->with('error', 'Terjadi Kesalahan ❌🍑');
         }
     }
 
@@ -78,8 +76,9 @@ class transactionController extends Controller
     {
         //
     }
-public function showTransactionUserByAdminWithSlugAndId($slug,$id){
-    $transaction = transaction::where('slug', $slug)->where('id', $id)->firstOrFail();
-    return view('pages.admin.transaction.show', compact('transaction'));
-}
+    public function showTransactionUserByAdminWithSlugAndId($id, $slug)
+    {
+        $transaction = transaction::where('slug', $slug)->where('id', $id)->firstOrFail();
+        return view('pages.admin.transaction.show', compact('transaction'));
+    }
 }

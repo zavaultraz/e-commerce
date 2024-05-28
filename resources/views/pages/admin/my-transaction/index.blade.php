@@ -111,14 +111,14 @@
                     <td>{{ $row->phone }}</td>
                     <td>Rp. {{number_format($row->total_price)}}</td>
                     <td>
-                        @if ($row->status == 'EXPIRED')
-                        <span class="badge bg-danger text-uppercase">Expired</span>
+                    @if ($row->status == 'EXPIRED')
+                        <span class="badge bg-danger text-uppercast">Expired</span>
                         @elseif ($row->status == 'PENDING')
-                        <span class="badge bg-warning text-uppercase">Pending</span>
+                        <span class="badge bg-warning text-uppercast">Pending</span>
                         @elseif ($row->status == 'SATTLEMENT')
-                        <span class="badge bg-info text-uppercase">Settelment</span>
+                        <span class="badge bg-info text-uppercast">Sattlement</span>
                         @else
-                        <span class="badge bg-succsess text-uppercase">Success</span>
+                        <span class="badge bg-success text-uppercast">Success</span>
                         @endif
                     </td>
                     <td>
