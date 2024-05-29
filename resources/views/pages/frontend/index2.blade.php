@@ -6,7 +6,7 @@
     <div class="container mx-auto mb-4">
         <div class="flex justify-center text-center mb-4">
             <h3 class="text-2xl capitalize font-semibold">
-                Just Arrived <br class="" />this summer for you
+                Just Arrived <br class="" />this best outfit to you
             </h3>
         </div>
     </div>

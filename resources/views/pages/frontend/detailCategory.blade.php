@@ -22,7 +22,7 @@
                     Add Now  <br class="" />To Your Cart
                 </h3>
             </div>
-            <div class="flex overflow-x-auto flex-wrap mb-4  -mx-3">
+            <div class="flex overflow-x-auto flex-wrap mb-4   -mx-3">
                 @foreach ($product as $row)
                 <div class="px-3  flex-none" style="width: 320px">
                     <div class="rounded-xl p-4 pb-8 relative bg-white">

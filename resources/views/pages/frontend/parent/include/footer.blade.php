@@ -57,7 +57,7 @@
                                 <input type="text"
                                     class="bg-gray-100 rounded-xl py-3 px-5 w-full focus:outline-none"
                                     placeholder="Your email adress" />
-                                <button class="bg-pink-400 absolute rounded-xl right-0 p-3">
+                                <button style="background-color: #5271ff;" class="absolute rounded-xl right-0 p-3">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -77,7 +77,7 @@
     <!-- START: FOOTER -->
     <footer class="flex text-center px-4 py-8 justify-center">
         <p class="text-sm">
-            Copyright 2021 • All Rights Reserved LuxSpace by BuildWith Angga
+            Copyright 2024 • All Rights Reserved Shoptify
         </p>
     </footer>
     <!-- END: FOOTER -->

@@ -132,7 +132,7 @@
                             <div class="flex -mx-2 flex-wrap">
                                 <div class="px-2 w-6/12 h-24 mb-4">
                                     <button type="button" data-value="dhl" data-name="courier" name="courier" class="border border-gray-200 focus:border-red-200 flex items-center justify-center rounded-xl bg-white w-full h-full focus:outline-none">
-                                        <img src="{{asset('frontend/images/content/logo-fedex.svg')}}" alt="Logo dhl" class="object-contain max-h-full" />
+                                        <img src="{{asset('frontend/images/content/j&t.svg')}}" alt="Logo dhl" class="object-contain max-h-full" />
                                     </button>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button type="submit" disabled class="bg-pink-400 text-black hover:bg-black hover:text-pink-400 focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-6">
+                            <button type="submit" disabled style="background-color: #5271FF;" class="text-black hover:bg-black hover:text-pink-400 focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-6">
                                 Checkout Now
                             </button>
                         </div>

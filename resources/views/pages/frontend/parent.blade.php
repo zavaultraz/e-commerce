@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>LuxSpace</title>
+    <title>Shoptify</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -36,14 +36,14 @@
     <section class="flex items-center hero">
         <div class="w-full absolute z-20 inset-0 md:relative md:w-1/2 text-center flex flex-col justify-center hero-caption">
             <h1 class="text-3xl md:text-5xl leading-tight font-semibold">
-                The Room <br class="" />You've Dreaming
+                The Style <br class="" />Depands on you
             </h1>
             <h2 class="px-8 text-base md:px-0 md:text-lg my-6 tracking-wide">
-                Kami menyediakan furniture berkelas yang
-                <br class="hidden lg:block" />membuat ruangan terasa homey
+                Kami manyediakan barang barang branded
+                <br class="hidden lg:block" />yang siap menghiasi outfit kamu
             </h2>
             <div>
-                <a href="#browse-the-room" class="bg-pink-400 text-black hover:bg-black hover:text-pink-400 rounded-full px-8 py-3 mt-4 inline-block flex-none transition duration-200">Explore Now</a>
+                <a href="#browse-the-room" style="background-color: #5271FF;color:white" class="hover:bg-black hover:text-pink-400 rounded-full px-8 py-3 mt-4 inline-block flex-none transition duration-200">Explore Now</a>
             </div>
         </div>
         <div class="w-full inset-0 md:relative md:w-1/2">
@@ -75,7 +75,7 @@
         <div class="container mx-auto">
             <div class="flex flex-start mb-4">
                 <h3 class="text-2xl capitalize font-semibold">
-                    browse the room <br class="" />that we designed for you
+                    browse your style <br class="" />that we have to you
                 </h3>
             </div>
             <div class="grid grid-rows-2 grid-cols-9 gap-4">
@@ -84,10 +84,10 @@
                         <img src="{{asset('frontend/images/content/image-catalog-1.png')}}" alt="" class="w-full h-full object-cover object-center overlay overflow-hidden rounded-xl" />
                     </div>
                     <div class="overlay left-0 top-0 bottom-0 flex justify-center flex-col pl-48 md:pl-72">
-                        <h5 class="text-lg font-semibold">Living Room</h5>
-                        <span class="">18.309 items</span>
+                        <h5 class="text-lg font-semibold">Shoes</h5>
+                        <span class="">99+</span>
                     </div>
-                    <a href="details.html" class="stretched-link">
+                    <a href="#" class="stretched-link">
                         <!-- fake children -->
                     </a>
                 </div>
@@ -96,10 +96,10 @@
                         <img src="{{asset('frontend/images/content/image-catalog-3.png')}}" alt="" class="w-full h-full object-cover object-center overlay overflow-hidden rounded-xl" />
                     </div>
                     <div class="overlay right-0 left-0 top-0 bottom-0 md:bottom-auto flex justify-center md:items-center flex-col pl-48 md:pl-0 pt-0 md:pt-12">
-                        <h5 class="text-lg font-semibold">Decoration</h5>
-                        <span class="">77.392 items</span>
+                        <h5 class="text-lg font-semibold">Bag</h5>
+                        <span class="">99+</span>
                     </div>
-                    <a href="details.html" class="stretched-link">
+                    <a href="#" class="stretched-link">
                         <!-- fake children -->
                     </a>
                 </div>
@@ -108,10 +108,10 @@
                         <img src="{{asset('frontend/images/content/image-catalog-4.png')}}" alt="" class="w-full h-full object-cover object-center overlay overflow-hidden rounded-xl" />
                     </div>
                     <div class="overlay right-0 left-0 top-0 bottom-0 md:bottom-auto flex justify-center md:items-center flex-col pl-48 md:pl-0 pt-0 md:pt-12">
-                        <h5 class="text-lg font-semibold">Living Room</h5>
-                        <span class="">22.094 items</span>
+                        <h5 class="text-lg font-semibold">T-shirt</h5>
+                        <span class="">99 items</span>
                     </div>
-                    <a href="details.html" class="stretched-link">
+                    <a href="#" class="stretched-link">
                         <!-- fake children -->
                     </a>
                 </div>
@@ -120,10 +120,10 @@
                         <img src="{{asset('frontend/images/content/image-catalog-2.png')}}" alt="" class="w-full h-full object-cover object-center overlay overflow-hidden rounded-xl" />
                     </div>
                     <div class="overlay left-0 top-0 bottom-0 flex justify-center flex-col pl-48 md:pl-72">
-                        <h5 class="text-lg font-semibold">Children Room</h5>
+                        <h5 class="text-lg font-semibold">Hat</h5>
                         <span class="">837 items</span>
                     </div>
-                    <a href="details.html" class="stretched-link">
+                    <a href="#" class="stretched-link">
                         <!-- fake children -->
                     </a>
                 </div>
@@ -141,13 +141,13 @@
                 <img src="{{asset('frontend/images/content/adidas-svgrepo-com.svg')}}" alt="" class="mx-auto')}}" />
             </div>
             <div class="w-full flex-auto md:w-auto md:flex-initial px-4 md:px-6 my-4 md:my-0">
-                <img src="{{asset('frontend/images/content/ikea-1-logo-svgrepo-com.svg')}}" alt="" class="mx-auto')}}" />
+                <img src="{{asset('frontend/images/content/nike-3-logo-svgrepo-com.svg')}}" alt="" class="mx-auto')}}" />
             </div>
             <div class="w-full flex-auto md:w-auto md:flex-initial px-4 md:px-6 my-4 md:my-0">
-                <img src="{{asset('frontend/images/content/play-station-logo-svgrepo-com.svg')}}" alt="" class="mx-auto" />
+                <img src="{{asset('frontend/images/content/STR.svg')}}" alt="" class="mx-auto" />
             </div>
             <div class="w-full flex-auto md:w-auto md:flex-initial px-4 md:px-6 my-4 md:my-0">
-                <img src="{{asset('frontend/images/content/xiaomi-1-logo-svgrepo-com.svg')}}" alt="" class="mx-auto')}}" />
+                <img src="{{asset('frontend/images/content/MORD.svg')}}" alt="" class="mx-auto')}}" />
             </div>
         </div>
     </section>
